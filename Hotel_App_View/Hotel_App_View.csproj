@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\StandardRoom\1.png" />
+    <None Remove="Images\Thumbnail\standard.jpg" />
+    <None Remove="Images\vice_city.jpg" />
+    <None Remove="Images\vice_vity_1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hotel_App_Library\Hotel_App_Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\StandardRoom\1.png" />
+    <Resource Include="Images\Thumbnail\standard.jpg" />
+    <Resource Include="Images\vice_city.jpg" />
+    <Resource Include="Images\vice_vity_1.jpg" />
+  </ItemGroup>
+
+</Project>

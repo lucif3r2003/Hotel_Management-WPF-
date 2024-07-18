@@ -1,0 +1,119 @@
+﻿<Window x:Class="Hotel_App_View.Admin.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_App_View.Admin"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl x:Name="tc1">
+            <TabItem Header="Room management">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
+                                <Label Content="Type Room: "/>
+                                <ComboBox Name="cbbTypeRoom" Width="100" SelectionChanged="cbbTypeRoom_SelectionChanged"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,10,0" >
+                                <Label Content="Status: "/>
+                                <StackPanel Orientation="Horizontal" Name="spStatus" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="btnclearFilter" Content="Clear Filter" Width="100"  Margin="10,0,10,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="btnReload" Content="Reload" Width="100"  Margin="10,0,10,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <DataGrid Name="dgvRoom" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="ID" Binding="{Binding Path=RoomId}"/>
+                            <DataGridTextColumn Width="*" Header="Number" Binding="{Binding Path=RoomNumber}"/>
+                            <DataGridTextColumn Width="*" Header="Room Type" Binding="{Binding Path=RoomType.TypeName}"/>
+                            <DataGridTextColumn Width="*" Header="Price (per day)" Binding="{Binding Path=Price}"/>
+                            <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Path=Status.StatusName}"/>
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnViewRoom" Content="View Detail" Width="100"  Tag="{Binding Path=RoomId}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Customer Management">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10,0,10,0">
+                        <Label Content="Status: "/>
+                        <StackPanel Orientation="Horizontal" Name="spCusStatus" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Name="btnclearFilter1" Content="Clear Filter" Width="100"  Margin="10,0,10,0"/>
+                        <Button Name="btnAddCusomer" Content="Add New Customer" Width="150"  Margin="10,0,10,0"/>
+                    </StackPanel>
+                    <DataGrid Name="dgvCustomer" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="ID" Binding="{Binding Path = CustomerId}"/>
+                            <DataGridTextColumn Width="*" Header="Full Name" Binding="{Binding Path = FullName}"/>
+                            <DataGridTextColumn Width="*" Header="Telephone" Binding="{Binding Path = Phone}"/>
+                            <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Path = Email}"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnViewCusDetail" Content="View Detail" Width="100"  Tag="{Binding Path=CustomerId}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Booking Management">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <Label Content="Status: "/>
+                        <StackPanel Orientation="Horizontal" Name="spStatusBooking" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Name="btnclearFilter2" Content="Clear Filter" Width="100"  Margin="10,0,10,0"/>
+                        <Button Name="btnReport" Content="View Report" Width="100"  Margin="10,0,10,0"/>
+                    </StackPanel>
+                    <DataGrid x:Name="dgvBooking" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Path=BookingId}"/>
+                            <DataGridTextColumn Header="Booking Date" Width="*" Binding="{Binding Path= BookingDate}"/>
+                            <DataGridTextColumn Header="Customer" Width="*" Binding="{Binding Path= Customer.FullName}"/>
+                            <DataGridTextColumn Header="Room Number" Width="*" Binding="{Binding Path= Room.RoomNumber}"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnViewBooking" Content="View Detail" Width="100"  Tag="{Binding Path=BookingReservationId}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Profile">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Bro you are Admin!" FontSize="20"/>
+                    <Button Name="btnLogout" Content="Log Out" Width="100" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

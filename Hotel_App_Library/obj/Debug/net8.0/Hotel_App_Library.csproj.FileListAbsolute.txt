@@ -1,0 +1,15 @@
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\Hotel_App_Library.deps.json
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\Hotel_App_Library.dll
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\Hotel_App_Library.pdb
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.AssemblyInfoInputs.cache
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.AssemblyInfo.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.csproj.CoreCompileInputs.cache
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.dll
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\refint\Hotel_App_Library.dll
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.pdb
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\ref\Hotel_App_Library.dll
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\Hotel_App_Library.runtimeconfig.json
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.csproj.AssemblyReference.cache
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.genruntimeconfig.cache
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\appsettings.json
