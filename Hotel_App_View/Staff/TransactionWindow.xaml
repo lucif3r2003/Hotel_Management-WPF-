@@ -1,0 +1,53 @@
+﻿<Window x:Class="Hotel_App_View.Staff.TransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_App_View.Staff"
+        mc:Ignorable="d"
+         Title="BookingWindow" Height="421" Width="500">
+    <Grid>
+        <StackPanel Name="RoomDetailView" Orientation="Vertical" Margin="0,0,0,-119" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Images/vice_vity_1.jpg"/>
+            </StackPanel.Background>
+            <Label Content="Transaction Confirmation" FontSize="30" FontWeight="Bold"/>
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Visibility="Hidden">
+                    <Label Content="Booking ID" Width="100"/>
+                    <TextBox Name="txtBookingId" Width="200" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Customer Name" Width="100"/>
+                    <TextBox Name="txtCusName" Width="200" IsReadOnly="True" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Check-in Date" Width="100"/>
+                    <TextBox Name="txtCheckIn" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Check-out Date" Width="100"/>
+                    <TextBox Name="txtCheckOut" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Room ID" Width="100"/>
+                    <TextBox x:Name="txtRoomID" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Price (perday)" Width="100"/>
+                    <TextBox Name="txtPrice" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Total Price" Width="100"/>
+                    <TextBox Name="txtTotal" Width="200" Text="Please input total price here"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Description" Width="100"/>
+                    <TextBox Name="txtDescription" Width="200" />
+                </StackPanel>
+            </StackPanel>
+            <Button Name="btnConfirm" Content="Confirm" Width="100" Click="btnConfirm_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

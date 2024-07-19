@@ -26,4 +26,12 @@ public partial class Staff
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+
+    public string FullName
+    {
+        get
+        {
+            return FirstName +  " " + LastName; 
+        }
+    }
 }

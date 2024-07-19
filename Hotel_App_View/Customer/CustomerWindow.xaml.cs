@@ -120,9 +120,13 @@ namespace Hotel_App_View.Customer
         private void loadHistory(int id)
         {
             BookingDAO bookingDAO = new BookingDAO();
+            TransactionDAO transactionDAO = new TransactionDAO();
             var list = bookingDAO.getListBookingById(id);
+            var listT = transactionDAO.getTransactionbyCusId(id);
             lvBooking.ItemsSource = list;
+            lvTransaction.ItemsSource = listT;
             lvBooking.Items.Refresh();
+            lvTransaction.Items.Refresh();
         }
 
         private void ButtonHistory_Click(object sender, RoutedEventArgs e)
@@ -163,8 +167,7 @@ namespace Hotel_App_View.Customer
             using(var context = new HotelManagementContext())
             {
                 int id = Convert.ToInt32(tblId.Text);
-                CustomerDAO customerDAO = new CustomerDAO();
-                var customer = customerDAO.getCustomerById(id);
+                var customer = context.Customers.SingleOrDefault(c => c.CustomerId == id);
                 if (customer == null)
                 {
                     MessageBox.Show("Customer not found.");

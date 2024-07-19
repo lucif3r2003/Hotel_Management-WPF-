@@ -39,7 +39,7 @@ namespace Hotel_App_Library.DAO
         {
             using( var context = new HotelManagementContext())
             {
-                var room = context.Rooms.Include(x=>x.Status).Where(x=>x.RoomTypeId==id).ToList();
+                var room = context.Rooms.Include(x => x.RoomType).Include(x=>x.Status).Where(x=>x.RoomTypeId==id).ToList();
                 return room;
             }
         }

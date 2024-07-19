@@ -35,5 +35,14 @@ namespace Hotel_App_Library.DAO
                 return list;
             }
         }
+
+        public Booking getBookingById(int id)
+        {
+            using (var context = new HotelManagementContext())
+            {
+                var b = context.Bookings.Include(x=>x.Room).Include(x => x.Customer).FirstOrDefault(x=>x.BookingId ==id);
+                return b;
+            }
+        }
     }
 }

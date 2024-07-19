@@ -27,6 +27,7 @@ namespace Hotel_App_View.Admin
             InitializeComponent();
             loadRoom();
             loadCus();
+            loadBooking();
         }
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         //----------------------------------------------------ROOM_MANAGEMENT--------------------------------------------------------------------------------------------
@@ -37,11 +38,6 @@ namespace Hotel_App_View.Admin
             var list = roomDAO.getListRoom();
             dgvRoom.ItemsSource = list;
             dgvRoom.Items.Refresh();
-            //load combobox:
-            var type = roomDAO.getListRoomType();
-            cbbTypeRoom.ItemsSource = type;
-            cbbTypeRoom.SelectedValuePath = "RoomTypeID";
-            cbbTypeRoom.DisplayMemberPath = "TypeName";
             //load radio button:
             RadioButton rdbAvailable = new RadioButton()
             {
@@ -65,24 +61,15 @@ namespace Hotel_App_View.Admin
             rdbOccupied.Checked += (s, e) => FilterRoom();
             rdbReserved.Checked += (s, e) => FilterRoom();
         }
-        private void cbbTypeRoom_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            FilterRoom();
-        }
         private void FilterRoom()
         {
             //get type room and status:
-            int? typeId = cbbTypeRoom.SelectedValue as int?;
             RadioButton rdb = spStatus.Children.OfType<RadioButton>().FirstOrDefault(x => x.IsChecked == true);
-            int? statusId = rdb.Tag as int?;
+            int statusId = Convert.ToInt32( rdb.Tag) ;
             //filter:
             using(var context = new HotelManagementContext())
             {
                 var query = context.Rooms.Include(x=>x.RoomType).Include(x=>x.Status).AsQueryable();
-                if (typeId != null)
-                {
-                    query = query.Where(x=>x.RoomTypeId== typeId);
-                }
                 if (statusId != null)
                 {
                     query = query.Where(x=>x.StatusId== statusId);
@@ -90,6 +77,44 @@ namespace Hotel_App_View.Admin
                 var list = query.ToList();
                 dgvRoom.ItemsSource = list;
                 dgvRoom.Items.Refresh();
+            }
+        }
+        private void btnclearFilter_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var rdb in spStatus.Children.OfType<RadioButton>())
+            {
+                rdb.IsChecked = false;
+            }
+            RoomDAO roomDAO = new RoomDAO();
+            var list = roomDAO.getListRoom();
+            dgvRoom.ItemsSource = list;
+            dgvRoom.Items.Refresh();
+        }
+        private void btnViewRoom_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if(btn != null)
+            {
+                int? id = btn.Tag as int?;
+                if (id != null)
+                {
+                    RoomDetail roomDetail = new RoomDetail(id.Value);
+                    roomDetail.Show();
+                }
+            }
+        }
+
+        private void btnclearFilter_Click_1(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                int? id = btn.Tag as int?;
+                if (id != null)
+                {
+                    RoomDetail roomDetail = new RoomDetail(id.Value);
+                    roomDetail.Show();
+                }
             }
         }
 
@@ -105,6 +130,57 @@ namespace Hotel_App_View.Admin
             dgvCustomer.Items.Refresh();    
         }
 
+        private void btnViewCusDetail_Click(object sender, RoutedEventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt != null)
+            {
+                int? id = bt.Tag as int?;
+                if (id != null)
+                {
+                    CustomerDetail customerDetail = new CustomerDetail(id.Value);
+                    customerDetail.Show();
+                }
+            }
+        }
 
+        //-----------------------------------------------------BOOKING MANAGEMENT---------------------------------------------------------------------------------------
+
+        private void loadBooking()
+        {
+            BookingDAO bookingDAO = new BookingDAO();
+            var list = bookingDAO.getBookingList();
+            dgvBooking.ItemsSource = list;
+            dgvBooking.Items.Refresh();
+        }
+
+       
+
+        private void btnViewBooking_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                int? id = btn.Tag as int?;
+                if(id != null)
+                {
+                    BookingDetail bookingDetail = new BookingDetail(id.Value);
+                    bookingDetail.Show();
+                }
+            }
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LoginWindow loginWindow = new LoginWindow();    
+            loginWindow.Show();
+        }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            ReportWindow  reportWindow = new ReportWindow();
+            reportWindow.Show();
+        }
     }
 }

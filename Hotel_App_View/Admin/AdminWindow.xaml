@@ -16,19 +16,12 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Vertical" Grid.Row="0">
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,10,0">
-                                <Label Content="Type Room: "/>
-                                <ComboBox Name="cbbTypeRoom" Width="100" SelectionChanged="cbbTypeRoom_SelectionChanged"/>
-                            </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="10,0,10,0" >
                                 <Label Content="Status: "/>
                                 <StackPanel Orientation="Horizontal" Name="spStatus" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Button Name="btnclearFilter" Content="Clear Filter" Width="100"  Margin="10,0,10,0"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Name="btnReload" Content="Reload" Width="100"  Margin="10,0,10,0"/>
+                                <Button Name="btnclearFilter" Content="Clear Filter" Click="btnclearFilter_Click_1" Width="100"  Margin="10,0,10,0"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
@@ -42,7 +35,7 @@
                             <DataGridTemplateColumn Width="*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Name="btnViewRoom" Content="View Detail" Width="100"  Tag="{Binding Path=RoomId}"/>
+                                        <Button Name="btnViewRoom" Content="View Detail" Width="100"  Tag="{Binding Path=RoomId}" Click="btnViewRoom_Click"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -71,7 +64,7 @@
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Name="btnViewCusDetail" Content="View Detail" Width="100"  Tag="{Binding Path=CustomerId}"/>
+                                        <Button Name="btnViewCusDetail" Content="View Detail" Width="100" Click="btnViewCusDetail_Click" Tag="{Binding Path=CustomerId}"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -86,10 +79,8 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <Label Content="Status: "/>
                         <StackPanel Orientation="Horizontal" Name="spStatusBooking" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <Button Name="btnclearFilter2" Content="Clear Filter" Width="100"  Margin="10,0,10,0"/>
-                        <Button Name="btnReport" Content="View Report" Width="100"  Margin="10,0,10,0"/>
+                        <Button Name="btnReport" Content="View Report" Width="100" Click="btnReport_Click" Margin="10,0,10,0"/>
                     </StackPanel>
                     <DataGrid x:Name="dgvBooking" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
@@ -100,7 +91,7 @@
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Name="btnViewBooking" Content="View Detail" Width="100"  Tag="{Binding Path=BookingReservationId}" />
+                                        <Button Name="btnViewBooking" Content="View Detail" Width="100" Click="btnViewBooking_Click"  Tag="{Binding Path=BookingId}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -111,7 +102,7 @@
             <TabItem Header="Profile">
                 <StackPanel Orientation="Vertical">
                     <Label Content="Bro you are Admin!" FontSize="20"/>
-                    <Button Name="btnLogout" Content="Log Out" Width="100" />
+                    <Button Name="btnLogout" Content="Log Out" Click="btnLogout_Click" Width="100" />
                 </StackPanel>
             </TabItem>
         </TabControl>

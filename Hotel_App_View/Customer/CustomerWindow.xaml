@@ -134,9 +134,10 @@
                 <ListView Name="lvTransaction" Margin="10,0,10,0">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Booking Date" Width="200" DisplayMemberBinding="{Binding Path=BookingDate}" />
-                            <GridViewColumn Header="Total Price" Width="180" DisplayMemberBinding="{Binding Path=TotalPrice}"/>
-                            <GridViewColumn Header="Status" Width="180" DisplayMemberBinding="{Binding Path=Room.Status}"/>
+                            <GridViewColumn Header="Transaction Date" Width="200" DisplayMemberBinding="{Binding Path=TransactionDate}" />
+                            <GridViewColumn Header="Total Price" Width="180" DisplayMemberBinding="{Binding Path=Amount}"/>
+                            <GridViewColumn Header="Staff" Width="180" DisplayMemberBinding="{Binding Path=Staff.FullName}"/>
+                            <GridViewColumn Header="Room Number" Width="180" DisplayMemberBinding="{Binding Path=Room.RoomNumber}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

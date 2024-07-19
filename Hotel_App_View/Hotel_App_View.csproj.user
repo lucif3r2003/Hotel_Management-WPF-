@@ -10,7 +10,19 @@
     <Compile Update="Admin\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\BookingDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\CustomerDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ReportWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\RoomDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\TransactionDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Customer\BookingWindow.xaml.cs">
@@ -25,12 +37,27 @@
     <Compile Update="Staff\StaffWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Staff\TransactionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Admin\AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Admin\BookingDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\CustomerDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ReportWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin\RoomDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\TransactionDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Customer\BookingWindow.xaml">
@@ -43,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Staff\StaffWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Staff\TransactionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

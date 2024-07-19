@@ -86,3 +86,13 @@ C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Hotel_App_View.sourcelink.json
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\StaffWindow.g.cs
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\StaffWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\TransactionWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\TransactionWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\CustomerDetail.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\CustomerDetail.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\BookingDetail.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\BookingDetail.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\ReportWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\TransactionDetail.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\ReportWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\TransactionDetail.baml

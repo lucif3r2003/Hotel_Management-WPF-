@@ -1,0 +1,44 @@
+﻿<Window x:Class="Hotel_App_View.Admin.BookingDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_App_View.Admin"
+        mc:Ignorable="d"
+        Title="BookingDetail" Height="450" Width="800">
+    <Grid>
+        <StackPanel  Orientation="Vertical" Name="DetailView" >
+            <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Booking ID" Width="100"/>
+                    <TextBox Name="txtBookingId" Width="200" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Customer Name" Width="100"/>
+                    <TextBox Name="txtCusName" Width="200" IsReadOnly="True" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Check-in Date" Width="100"/>
+                    <TextBox Name="txtCheckIn" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Check-out Date" Width="100"/>
+                    <TextBox Name="txtCheckOut" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Room ID" Width="100"/>
+                    <TextBox x:Name="txtRoomID" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Content="Price (perday)" Width="100"/>
+                    <TextBox Name="txtPrice" Width="200" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Button Name="btnBack" Content="Cancel" Width="100"  Margin="30,0,0,0" Click="btnBack_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\App.xaml
-61950847111
+11-47147525
 
-9-277426747
+141230126847
 245-1106493604
-Admin\AdminWindow.xaml;Admin\RoomDetail.xaml;Customer\BookingWindow.xaml;Customer\CustomerWindow.xaml;LoginWindow.xaml;Staff\StaffWindow.xaml;
+Admin\AdminWindow.xaml;Admin\BookingDetail.xaml;Admin\CustomerDetail.xaml;Admin\ReportWindow.xaml;Admin\RoomDetail.xaml;Admin\TransactionDetail.xaml;Customer\BookingWindow.xaml;Customer\CustomerWindow.xaml;LoginWindow.xaml;Staff\StaffWindow.xaml;Staff\TransactionWindow.xaml;
 
 False
 
