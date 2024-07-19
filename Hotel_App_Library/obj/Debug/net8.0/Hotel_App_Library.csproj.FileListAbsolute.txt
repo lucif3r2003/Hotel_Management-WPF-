@@ -13,3 +13,4 @@ C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.csproj.AssemblyReference.cache
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.genruntimeconfig.cache
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\bin\Debug\net8.0\appsettings.json
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_Library\obj\Debug\net8.0\Hotel_App_Library.sourcelink.json

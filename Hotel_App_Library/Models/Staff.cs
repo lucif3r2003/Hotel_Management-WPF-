@@ -21,6 +21,8 @@ public partial class Staff
 
     public decimal? Salary { get; set; }
 
+    public string Password { get; set; } = null!;
+
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();

@@ -2,6 +2,7 @@
 using Hotel_App_Library.Models;
 using Hotel_App_View.Admin;
 using Hotel_App_View.Customer;
+using Hotel_App_View.Staff;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -32,17 +33,19 @@ namespace Hotel_App_View
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             CustomerDAO customerDAO = new CustomerDAO();
+            StaffDAO sDAO = new StaffDAO(); 
             var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
             string email = txtEmail.Text;
             string pw = pwbPw.Password;
             if(email ==null || pw ==null)
             {
-                MessageBox.Show("Invalid email or password");
+                MessageBox.Show("Invalid email or password 1");
                 return;
             }
             else
             {
                 var cus = customerDAO.getCustomerByEmailpassword(email, pw);
+                var s = sDAO.getStaffByEmailPW(email, pw);
                 if (cus != null)
                 {
                     int id = cus.CustomerId;
@@ -50,6 +53,13 @@ namespace Hotel_App_View
                     this.Hide();
                     cusWin.Show();
 
+                }
+                else if (s != null)
+                {
+                    int id = s.StaffId;
+                    StaffWindow staffWindow = new StaffWindow(id);
+                    this.Hide();
+                    staffWindow.Show();
                 }
                 else if(email == config["AdminAccount:Email"] && pw == config["AdminAccount:Password"])
                 {
@@ -59,7 +69,7 @@ namespace Hotel_App_View
                 }
                 else
                 {
-                    MessageBox.Show("Invalid email or password");
+                    MessageBox.Show("Invalid email or password 2");
                     return;
                 }
             }

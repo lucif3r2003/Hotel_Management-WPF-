@@ -1,12 +1,12 @@
 USE [Hotel_management]
 GO
-/****** Object:  Table [dbo].[Booking]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[Booking]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Booking](
-	[BookingID] [int] NOT NULL,
+	[BookingID] [int] IDENTITY(1,1) NOT NULL,
 	[CustomerID] [int] NOT NULL,
 	[RoomID] [int] NOT NULL,
 	[StaffID] [int] NULL,
@@ -19,13 +19,13 @@ CREATE TABLE [dbo].[Booking](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Customer](
-	[CustomerID] [int] NOT NULL,
+	[CustomerID] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
 	[Address] [nvarchar](max) NULL,
@@ -38,7 +38,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Room]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[Room]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -55,7 +55,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RoomStatus]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[RoomStatus]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,7 +70,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RoomType]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[RoomType]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -85,13 +85,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Staff]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[Staff]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Staff](
-	[StaffID] [int] NOT NULL,
+	[StaffID] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
 	[Position] [nvarchar](50) NULL,
@@ -105,13 +105,13 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Transaction]    Script Date: 7/17/2024 2:34:17 PM ******/
+/****** Object:  Table [dbo].[Transaction]    Script Date: 7/19/2024 5:01:50 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Transaction](
-	[TransactionID] [int] NOT NULL,
+	[TransactionID] [int] IDENTITY(1,1) NOT NULL,
 	[RoomID] [int] NULL,
 	[CustomerID] [int] NULL,
 	[StaffID] [int] NULL,
@@ -125,15 +125,24 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[Booking] ON 
+GO
+INSERT [dbo].[Booking] ([BookingID], [CustomerID], [RoomID], [StaffID], [CheckInDate], [CheckOutDate], [BookingDate]) VALUES (1002, 1, 2, NULL, CAST(N'2024-07-19' AS Date), CAST(N'2024-07-20' AS Date), CAST(N'2024-07-18' AS Date))
+GO
+SET IDENTITY_INSERT [dbo].[Booking] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Customer] ON 
 INSERT [dbo].[Customer] ([CustomerID], [FirstName], [LastName], [Address], [Phone], [Email], [Password]) VALUES (1, N'John', N'Doe', N'123 Main St, Anytown, USA', N'+1234567890', N'john.doe@example.com', N'123')
 GO
 INSERT [dbo].[Customer] ([CustomerID], [FirstName], [LastName], [Address], [Phone], [Email], [Password]) VALUES (2, N'Jane', N'Smith', N'456 Elm St, Othertown, USA', N'+1987654321', N'jane.smith@example.com', N'123')
 GO
 INSERT [dbo].[Customer] ([CustomerID], [FirstName], [LastName], [Address], [Phone], [Email], [Password]) VALUES (3, N'Michael', N'Johnson', N'789 Oak St, Another Town, USA', N'+1122334455', N'michael.j@example.com', N'123')
 GO
-INSERT [dbo].[Room] ([RoomID], [RoomNumber], [RoomTypeID], [StatusID], [Price]) VALUES (1, N'101', 1, 1, CAST(100.00 AS Decimal(10, 2)))
+SET IDENTITY_INSERT [dbo].[Customer] OFF
 GO
-INSERT [dbo].[Room] ([RoomID], [RoomNumber], [RoomTypeID], [StatusID], [Price]) VALUES (2, N'102', 1, 1, CAST(100.00 AS Decimal(10, 2)))
+INSERT [dbo].[Room] ([RoomID], [RoomNumber], [RoomTypeID], [StatusID], [Price]) VALUES (1, N'101', 1, 3, CAST(100.00 AS Decimal(10, 2)))
+GO
+INSERT [dbo].[Room] ([RoomID], [RoomNumber], [RoomTypeID], [StatusID], [Price]) VALUES (2, N'102', 1, 3, CAST(100.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[Room] ([RoomID], [RoomNumber], [RoomTypeID], [StatusID], [Price]) VALUES (3, N'103', 2, 1, CAST(150.00 AS Decimal(10, 2)))
 GO
@@ -243,11 +252,14 @@ INSERT [dbo].[RoomType] ([RoomTypeID], [TypeName], [Description]) VALUES (2, N'D
 GO
 INSERT [dbo].[RoomType] ([RoomTypeID], [TypeName], [Description]) VALUES (3, N'Suite', N'Luxury, additional facilities')
 GO
+SET IDENTITY_INSERT [dbo].[Staff] ON 
 INSERT [dbo].[Staff] ([StaffID], [FirstName], [LastName], [Position], [PhoneNumber], [Email], [HireDate], [Salary]) VALUES (1, N'Rebecca', N'Williams', N'Front Desk Clerk', N'+1122334455', N'rebecca.w@example.com', CAST(N'2023-01-15' AS Date), CAST(35000.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[Staff] ([StaffID], [FirstName], [LastName], [Position], [PhoneNumber], [Email], [HireDate], [Salary]) VALUES (2, N'David', N'Miller', N'Housekeeping Supervisor', N'+1987654321', N'david.m@example.com', CAST(N'2023-02-20' AS Date), CAST(40000.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[Staff] ([StaffID], [FirstName], [LastName], [Position], [PhoneNumber], [Email], [HireDate], [Salary]) VALUES (3, N'Sarah', N'Jones', N'Manager', N'+1234567890', N'sarah.j@example.com', CAST(N'2022-12-10' AS Date), CAST(50000.00 AS Decimal(10, 2)))
+GO
+SET IDENTITY_INSERT [dbo].[Staff] OFF
 GO
 ALTER TABLE [dbo].[Booking]  WITH CHECK ADD FOREIGN KEY([CustomerID])
 REFERENCES [dbo].[Customer] ([CustomerID])
@@ -277,4 +289,8 @@ ALTER TABLE [dbo].[Transaction]  WITH CHECK ADD  CONSTRAINT [FK_Transaction_Book
 REFERENCES [dbo].[Booking] ([BookingID])
 GO
 ALTER TABLE [dbo].[Transaction] CHECK CONSTRAINT [FK_Transaction_Booking]
+GO
+USE [master]
+GO
+ALTER DATABASE [Hotel_management] SET  READ_WRITE 
 GO

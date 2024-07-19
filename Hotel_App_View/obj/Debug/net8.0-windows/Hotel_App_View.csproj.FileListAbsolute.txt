@@ -83,3 +83,6 @@ C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LoginWindow.baml
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingWindow.g.cs
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Hotel_App_View.sourcelink.json
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\StaffWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Staff\StaffWindow.baml

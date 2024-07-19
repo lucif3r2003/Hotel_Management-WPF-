@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,15 @@ namespace Hotel_App_Library.DAO
             using(var context = new HotelManagementContext())
             {
                 var room = context.Rooms.Include(x=>x.Status).Where(x=>x.RoomId==id).FirstOrDefault();
+                return room;
+            }
+        }
+
+        public List<Room> getListRoomByTypeId(int id)
+        {
+            using( var context = new HotelManagementContext())
+            {
+                var room = context.Rooms.Include(x=>x.Status).Where(x=>x.RoomTypeId==id).ToList();
                 return room;
             }
         }

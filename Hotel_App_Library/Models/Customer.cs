@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Hotel_App_Library.Models;
 
@@ -22,6 +23,7 @@ public partial class Customer
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+
     public string FullName
     {
         get

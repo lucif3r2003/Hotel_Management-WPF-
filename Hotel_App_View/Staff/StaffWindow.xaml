@@ -1,0 +1,101 @@
+﻿    <Window x:Class="Hotel_App_View.Staff.StaffWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:Hotel_App_View.Staff"
+            mc:Ignorable="d"
+            Title="StaffWindow" Height="450" Width="800">
+        <Grid>
+            <!-- Search Bar -->
+            <DockPanel LastChildFill="True">
+                <TextBox DockPanel.Dock="Top" Margin="10"/>
+            </DockPanel>
+
+            <!-- Menu  -->
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Menu -->
+                <StackPanel Grid.Column="0" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/Images/vice_city.jpg"/>
+                    </StackPanel.Background>
+                    <Label Content="Hello"/>
+                <Button Name="btnHome" Content="Booking List" Margin="5" Click="btnHome_Click"/>
+                <Button Name="btnProfile" Content="Profile" Margin="5" Click="btnProfile_Click"/>
+                    <TextBlock Text="Contact: 0987271709 " Background="LightCoral" Margin="10,300,10,0" />
+                </StackPanel>
+                <!--View List Booking-->
+                <ScrollViewer Grid.Column="1"  VerticalScrollBarVisibility="Auto" Margin="5">
+
+                    <StackPanel Grid.Column="1" Name="BookingListlView" Orientation="Vertical" >
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/Images/vice_vity_1.jpg"/>
+                    </StackPanel.Background>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                            <TextBox x:Name="txtSearch" Text="Input Custuomer Name" Width="150"/>
+                            <Button x:Name="btnSearch" Content="Seacrh" Width="70" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DockPanel>
+                    <ListView Name="lvBooking" SelectionChanged="lvBooking_SelectionChanged" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Booking ID" Width="150" DisplayMemberBinding="{Binding Path=BookingId}"/>
+                                <GridViewColumn Header="Customer" Width="150" DisplayMemberBinding="{Binding Path=Customer.FullName}"/>
+                                <GridViewColumn Header="Booking Date" Width="150" DisplayMemberBinding="{Binding Path=BookingDate}" />
+                                <GridViewColumn Header="Room Number" Width="100" DisplayMemberBinding="{Binding Path=Room.RoomNumber}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                </ScrollViewer>
+                <!--Booking Detail-->
+            <StackPanel Grid.Column="1" Orientation="Vertical" Name="DetailView">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Images/vice_vity_1.jpg"/>
+                </StackPanel.Background>
+                
+            </StackPanel>
+
+            <!--Staff Profile-->
+                <StackPanel Grid.Column="1" Orientation="Vertical" Name="ProfileView" Visibility="Collapsed">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/Images/vice_vity_1.jpg"/>
+                    </StackPanel.Background>
+                    <StackPanel Orientation="Vertical" Margin="0,90,0,0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                            <Label Content="First Name" Width="100"/>
+                            <TextBox Name="txtFirstName" Width="200" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                            <Label Content="Last Name" Width="100"/>
+                            <TextBox Name="txtLastName" Width="200" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                            <Label Content="Phone Number" Width="100"/>
+                            <TextBox Name="txtPhone" Width="200"/>
+                        </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                        <Label Content="Email" Width="100"/>
+                        <TextBox Name="txtMail" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                            <Label Content="Password" Width="100"/>
+                            <PasswordBox x:Name="pwbPw" Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                            <Button Name="btnSave" Content="Save change" Width="100" ></Button>
+                            <Button Name="btnLogOut" Content="Log Out" Width="100"  Margin="30,0,0,0"/>
+                        </StackPanel>
+                        <TextBlock Name="tblId" Width="100" Visibility="Collapsed"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Window>

@@ -10,6 +10,23 @@ namespace Hotel_App_Library.DAO
 {
     public class BookingDAO
     {
+        public List<Booking> getBookingList()
+        {
+            using (var context = new HotelManagementContext())
+            {
+                var list = context.Bookings.Include(x => x.Room).Include(x=>x.Customer).ToList();
+                return list;
+            }
+        }
+
+        public List<Booking> getBookingListStaff()
+        {
+            using (var context = new HotelManagementContext())
+            {
+                var list = context.Bookings.Include(x => x.Room).Include(x => x.Customer).Where(x=>x.CheckOutDate > DateOnly.FromDateTime(DateTime.Now)).ToList();
+                return list;
+            }
+        }
         public List<Booking> getListBookingById(int id)
         {
             using(var context = new HotelManagementContext())
