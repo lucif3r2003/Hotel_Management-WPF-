@@ -14,7 +14,7 @@ namespace Hotel_App_Library.DAO
         {
             using (var context = new HotelManagementContext())
             {
-                var list = context.Bookings.Include(x => x.Room).Include(x=>x.Customer).ToList();
+                var list = context.Bookings.Include(x => x.Room).Include(x=>x.Status).Include(x=>x.Customer).ToList();
                 return list;
             }
         }
@@ -23,7 +23,7 @@ namespace Hotel_App_Library.DAO
         {
             using (var context = new HotelManagementContext())
             {
-                var list = context.Bookings.Include(x => x.Room).Include(x => x.Customer).Where(x=>x.CheckOutDate > DateOnly.FromDateTime(DateTime.Now)).ToList();
+                var list = context.Bookings.Include(x => x.Room).Include(x => x.Customer).Include(x => x.Status).Where(x=>x.CheckOutDate > DateOnly.FromDateTime(DateTime.Now)).ToList();
                 return list;
             }
         }
@@ -31,7 +31,7 @@ namespace Hotel_App_Library.DAO
         {
             using(var context = new HotelManagementContext())
             {
-                var list = context.Bookings.Include(x=>x.Room).Where(x => x.CustomerId == id).ToList();
+                var list = context.Bookings.Include(x=>x.Room).Include(x => x.Status).Where(x => x.CustomerId == id).ToList();
                 return list;
             }
         }
@@ -40,7 +40,7 @@ namespace Hotel_App_Library.DAO
         {
             using (var context = new HotelManagementContext())
             {
-                var b = context.Bookings.Include(x=>x.Room).Include(x => x.Customer).FirstOrDefault(x=>x.BookingId ==id);
+                var b = context.Bookings.Include(x=>x.Room).Include(x => x.Customer).Include(x => x.Status).FirstOrDefault(x=>x.BookingId ==id);
                 return b;
             }
         }

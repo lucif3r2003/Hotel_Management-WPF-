@@ -21,7 +21,7 @@ namespace Hotel_App_Library.DAO
         {
             using( var context = new HotelManagementContext())
             {
-                return context.Customers.Where(x=>x.CustomerId == id).FirstOrDefault();
+                return context.Customers.SingleOrDefault(x => x.CustomerId == id);
             }
         }
         public Customer getCustomerByName(string name)
@@ -37,6 +37,14 @@ namespace Hotel_App_Library.DAO
             using(var context = new HotelManagementContext())
             {
                 return context.Customers.Where(x=>x.Email==mail && x.Password==password).FirstOrDefault();   
+            }
+        }
+
+        public Customer GetCustomerByEmail(string email)
+        {
+            using(var context = new HotelManagementContext())
+            {
+                return context.Customers.SingleOrDefault(x => x.Email == email);
             }
         }
     }

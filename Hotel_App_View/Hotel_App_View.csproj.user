@@ -25,13 +25,22 @@
     <Compile Update="Admin\TransactionDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Customer\BookingDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Customer\BookingWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Customer\CustomerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoginWindow.xaml.cs">
+    <Compile Update="LogIn\ForgetPassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LogIn\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LogIn\SigUpWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Staff\StaffWindow.xaml.cs">
@@ -60,13 +69,22 @@
     <Page Update="Admin\TransactionDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Customer\BookingDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Customer\BookingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Customer\CustomerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoginWindow.xaml">
+    <Page Update="LogIn\ForgetPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LogIn\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LogIn\SigUpWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Staff\StaffWindow.xaml">

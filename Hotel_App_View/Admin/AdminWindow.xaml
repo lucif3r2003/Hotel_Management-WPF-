@@ -99,6 +99,30 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
+            <TabItem Header="Staff Management">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="dgvStaff" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Header="ID" Binding="{Binding Path=StaffId}"/>
+                            <DataGridTextColumn Width="*" Header="Full Name" Binding="{Binding Path=FullName}"/>
+                            <DataGridTextColumn Width="*" Header="Position" Binding="{Binding Path=Position}"/>
+                            <DataGridTextColumn Width="*" Header="Phone Number" Binding="{Binding Path=PhoneNumber}"/>
+                            <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Path=Email}"/>
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnViewStaffDetail" Content="View Detail" Width="100" Click="btnViewStaffDetail_Click"  Tag="{Binding Path=StaffId}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
             <TabItem Header="Profile">
                 <StackPanel Orientation="Vertical">
                     <Label Content="Bro you are Admin!" FontSize="20"/>

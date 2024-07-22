@@ -119,7 +119,7 @@
                     <Button Name="btnSearch" Content="Search" Width="100" />
                 </StackPanel>
                 <Label Content="Booking History" Margin="10,0,10,0" FontSize="20" FontWeight="Bold"/>
-                <ListView Name="lvBooking" Margin="10,0,10,0">
+                <ListView Name="lvBooking" Margin="10,0,10,0" SelectionChanged="lvBooking_SelectionChanged">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Booking ID" Width="150" DisplayMemberBinding="{Binding Path=BookingId}"/>
@@ -127,6 +127,7 @@
                             <GridViewColumn Header="Check In Date" Width="150" DisplayMemberBinding="{Binding Path=CheckInDate}" />
                             <GridViewColumn Header="Check Out Date" Width="150" DisplayMemberBinding="{Binding Path=CheckOutDate}" />
                             <GridViewColumn Header="Room Number" Width="180" DisplayMemberBinding="{Binding Path=Room.RoomNumber}"/>
+                            <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Path=Status.Description}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

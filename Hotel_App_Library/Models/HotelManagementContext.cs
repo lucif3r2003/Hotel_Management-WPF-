@@ -18,6 +18,8 @@ public partial class HotelManagementContext : DbContext
 
     public virtual DbSet<Booking> Bookings { get; set; }
 
+    public virtual DbSet<BookingStatus> BookingStatuses { get; set; }
+
     public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Room> Rooms { get; set; }
@@ -34,10 +36,7 @@ public partial class HotelManagementContext : DbContext
     {
         var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
         optionsBuilder.UseSqlServer(config.GetConnectionString("MyCnn"));
-
-
     }
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,6 +48,7 @@ public partial class HotelManagementContext : DbContext
             entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
             entity.Property(e => e.RoomId).HasColumnName("RoomID");
             entity.Property(e => e.StaffId).HasColumnName("StaffID");
+            entity.Property(e => e.StatusId).HasColumnName("StatusID");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.CustomerId)
@@ -63,6 +63,22 @@ public partial class HotelManagementContext : DbContext
             entity.HasOne(d => d.Staff).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.StaffId)
                 .HasConstraintName("FK__Booking__StaffID__44FF419A");
+
+            entity.HasOne(d => d.Status).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.StatusId)
+                .HasConstraintName("FK_Booking_StatusID");
+        });
+
+        modelBuilder.Entity<BookingStatus>(entity =>
+        {
+            entity.HasKey(e => e.StatusId).HasName("PK__BookingS__C8EE204380FE2E44");
+
+            entity.ToTable("BookingStatus");
+
+            entity.Property(e => e.StatusId)
+                .ValueGeneratedNever()
+                .HasColumnName("StatusID");
+            entity.Property(e => e.Description).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -138,7 +154,7 @@ public partial class HotelManagementContext : DbContext
                 .HasMaxLength(255)
                 .HasDefaultValue("123");
             entity.Property(e => e.PhoneNumber).HasMaxLength(20);
-            entity.Property(e => e.Position).HasMaxLength(50);
+            entity.Property(e => e.Role).HasDefaultValue(1);
             entity.Property(e => e.Salary).HasColumnType("decimal(10, 2)");
         });
 

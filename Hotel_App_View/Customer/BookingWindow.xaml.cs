@@ -42,7 +42,8 @@ namespace Hotel_App_View.Customer
                 RoomId = roomId,
                 CheckInDate = DateOnly.FromDateTime(dpkStart.SelectedDate.Value),
                 CheckOutDate = DateOnly.FromDateTime(dpkEnd.SelectedDate.Value),
-                BookingDate = DateOnly.FromDateTime(DateTime.Now)
+                BookingDate = DateOnly.FromDateTime(DateTime.Now),
+                StatusId = 0
             };
             if (booking.CheckInDate >  booking.CheckOutDate)
             {

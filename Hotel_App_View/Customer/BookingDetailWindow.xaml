@@ -1,0 +1,45 @@
+﻿<Window x:Class="Hotel_App_View.Customer.BookingDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_App_View.Customer"
+        mc:Ignorable="d"
+        Title="BookingDetailWindow" Height="450" Width="800">
+    <StackPanel Grid.Column="1" Orientation="Vertical" Name="DetailView" >
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/Images/vice_vity_1.jpg"/>
+        </StackPanel.Background>
+        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Booking ID" Width="100"/>
+                <TextBox Name="txtBookingId" Width="200" IsReadOnly="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Check-in Date" Width="100"/>
+                <TextBox Name="txtCheckIn" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Check-out Date" Width="100"/>
+                <TextBox Name="txtCheckOut" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Room ID" Width="100"/>
+                <TextBox x:Name="txtRoomID" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Price (perday)" Width="100"/>
+                <TextBox Name="txtPrice" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Label Content="Status" Width="100"/>
+                <TextBox Name="txtStatus" Width="200" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Button Name="btnCancelBooking" Content="Cancel Booking" Width="110" Click="btnCancelBooking_Click" Visibility="Collapsed"></Button>
+                <Button Name="btnBack" Content="Back" Width="100"  Margin="30,0,0,0" Click="btnBack_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+    </StackPanel>
+</Window>

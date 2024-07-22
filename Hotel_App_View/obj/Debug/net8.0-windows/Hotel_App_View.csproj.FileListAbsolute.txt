@@ -79,8 +79,6 @@ C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\CustomerWindow.baml
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\RoomDetail.g.cs
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\RoomDetail.baml
-C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LoginWindow.g.cs
-C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LoginWindow.baml
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingWindow.g.cs
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingWindow.baml
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Hotel_App_View.sourcelink.json
@@ -96,3 +94,11 @@ C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\TransactionDetail.g.cs
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\ReportWindow.baml
 C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Admin\TransactionDetail.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Login\LoginWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LogIn\SigUpWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LogIn\LoginWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LogIn\SigUpWindow.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LogIn\ForgetPassword.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\LogIn\ForgetPassword.baml
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingDetailWindow.g.cs
+C:\Lucifer_haha\workspace\Semester_5\Project\Hotel_Management\Hotel_App_View\obj\Debug\net8.0-windows\Customer\BookingDetailWindow.baml

@@ -1,0 +1,153 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_View\\Hotel_App_View.csproj": {}
+  },
+  "projects": {
+    "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\Hotel_App_Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\Hotel_App_Library.csproj",
+        "projectName": "Hotel_App_Library",
+        "projectPath": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\Hotel_App_Library.csproj",
+        "packagesPath": "C:\\Users\\buima\\.nuget\\packages\\",
+        "outputPath": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_View\\Hotel_App_View.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_View\\Hotel_App_View.csproj",
+        "projectName": "Hotel_App_View",
+        "projectPath": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_View\\Hotel_App_View.csproj",
+        "packagesPath": "C:\\Users\\buima\\.nuget\\packages\\",
+        "outputPath": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_View\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\buima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\Hotel_App_Library.csproj": {
+                "projectPath": "C:\\Lucifer_haha\\workspace\\Semester_5\\Project\\Hotel_Management\\Hotel_App_Library\\Hotel_App_Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

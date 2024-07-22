@@ -1,5 +1,6 @@
 ﻿using Hotel_App_Library.DAO;
 using Hotel_App_Library.Models;
+using Hotel_App_View.LogIn;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -116,7 +117,7 @@ namespace Hotel_App_View.Customer
                 
             }
         }
-
+//------------------------------------------------------------------------HISTORY-----------------------------------------------------------------------------------------------
         private void loadHistory(int id)
         {
             BookingDAO bookingDAO = new BookingDAO();
@@ -137,6 +138,34 @@ namespace Hotel_App_View.Customer
             RoomDetailView.Visibility = Visibility.Collapsed;
             transactionHistoryView.Visibility = Visibility.Visible;
             loadHistory(customerId);
+        }
+
+        private void lvBooking_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var selectedItem = lvBooking.SelectedItem;
+                if (selectedItem == null)
+                {                   
+                    return;
+                }
+
+                if (selectedItem is Booking b)
+                {
+                    int id = b.BookingId;
+                    BookingDetailWindow bookingDetailWindow = new BookingDetailWindow(id, customerId);
+                    bookingDetailWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Casting failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
         }
         //------------------------------------------------------------PROFILE-----------------------------------------------------------------------------------------------
 
@@ -203,8 +232,8 @@ namespace Hotel_App_View.Customer
         private void btnLogOut_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            LoginWindow win = new LoginWindow();
-            win.Show();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
         }
         private bool IsValidPhoneNumber(string phoneNumber)
         {

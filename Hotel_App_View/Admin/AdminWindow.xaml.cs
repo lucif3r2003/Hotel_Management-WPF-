@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Hotel_App_Library.Models;
 using Hotel_App_Library.DAO;
 using Microsoft.EntityFrameworkCore;
+using Hotel_App_View.LogIn;
 
 namespace Hotel_App_View.Admin
 {
@@ -28,6 +29,7 @@ namespace Hotel_App_View.Admin
             loadRoom();
             loadCus();
             loadBooking();
+            loadStaff();
         }
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         //----------------------------------------------------ROOM_MANAGEMENT--------------------------------------------------------------------------------------------
@@ -173,7 +175,7 @@ namespace Hotel_App_View.Admin
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            LoginWindow loginWindow = new LoginWindow();    
+            LoginWindow loginWindow = new LoginWindow(); 
             loginWindow.Show();
         }
 
@@ -181,6 +183,20 @@ namespace Hotel_App_View.Admin
         {
             ReportWindow  reportWindow = new ReportWindow();
             reportWindow.Show();
+        }
+
+        //----------------------------------------------------------------------Staff------------------------------------------------------------------------------------
+
+        private void loadStaff()
+        {
+            var context = new HotelManagementContext(); 
+            var list = context.Staff.ToList();
+            dgvStaff.ItemsSource = list;
+            dgvStaff.Items.Refresh();
+        }
+        private void btnViewStaffDetail_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

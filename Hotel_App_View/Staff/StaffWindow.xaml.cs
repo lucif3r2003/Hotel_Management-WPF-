@@ -15,6 +15,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hotel_App_View.LogIn;
+using System.Net;
 
 namespace Hotel_App_View.Staff
 {
@@ -83,16 +85,76 @@ namespace Hotel_App_View.Staff
                 int bookingId = selectedBooking.BookingId;
                 BookingDAO bookingDAO = new BookingDAO();
                 CustomerDAO customerDAO = new CustomerDAO();  
-                RoomDAO roomDAO = new RoomDAO();               
+                RoomDAO roomDAO = new RoomDAO();
+                BookingStatusDAO bookingStatusDAO = new BookingStatusDAO();
                 var b = bookingDAO.getBookingById(bookingId);
                 var r = roomDAO.getRoomById(b.RoomId);
                 var c = customerDAO.getCustomerById(b.CustomerId);
+                var stt = bookingStatusDAO.getBookingStatusById(b.StatusId.Value);
                 txtBookingId.Text = bookingId.ToString();
                 txtCheckIn.Text = b.CheckInDate.ToString();
                 txtCheckOut.Text = b.CheckOutDate.ToString();
                 txtCusName.Text = c.FullName;
                 txtRoomID.Text = b.RoomId.ToString();
-                txtPrice.Text = r.Price.ToString(); 
+                txtPrice.Text = r.Price.ToString();
+                txtStatus.Text = stt.Description.ToString();
+                DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+                if (b.StatusId == 0  && (today.DayNumber - b.BookingDate.DayNumber) <= 1)
+                {
+                    btnCreateTransaction.Visibility = Visibility.Visible;
+                    btnCancel.Visibility = Visibility.Collapsed;
+                }
+                else if (b.StatusId == 0 && (today.DayNumber - b.BookingDate.DayNumber) >= 1)
+                {
+                    btnCreateTransaction.Visibility = Visibility.Visible;
+                    btnCancel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    btnCancel.Visibility = Visibility.Collapsed;
+                    btnCreateTransaction.Visibility= Visibility.Collapsed;
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new HotelManagementContext())
+            {
+                var result = MessageBox.Show("Do you want to cancel this booking?", "Confirm", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    var booking = context.Bookings.FirstOrDefault(b => b.BookingId == Convert.ToInt32(txtBookingId.Text));
+
+                    if (booking != null)
+                    {
+                        booking.StatusId = 2; // Assuming 2 represents 'Cancelled' status
+
+                        // Log before saving
+                        MessageBox.Show("Attempting to save changes...");
+
+                        context.SaveChanges();
+
+                        // Log after saving
+                        MessageBox.Show("Changes saved. Verifying...");
+
+                        // Verify the change by re-fetching from the database
+                        var updatedBooking = context.Bookings.AsNoTracking().FirstOrDefault(b => b.BookingId == Convert.ToInt32(txtBookingId.Text));
+                        if (updatedBooking != null && updatedBooking.StatusId == 2)
+                        {
+                            MessageBox.Show("Booking cancelled successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to verify booking cancellation.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Booking not found.");
+                    }
+                }
+                this.Close();
             }
         }
 
@@ -161,5 +223,7 @@ namespace Hotel_App_View.Staff
         {
             return email.Contains("@");
         }
+
+
     }
 }

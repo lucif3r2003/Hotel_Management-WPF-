@@ -50,6 +50,7 @@
                                 <GridViewColumn Header="Customer" Width="150" DisplayMemberBinding="{Binding Path=Customer.FullName}"/>
                                 <GridViewColumn Header="Booking Date" Width="150" DisplayMemberBinding="{Binding Path=BookingDate}" />
                                 <GridViewColumn Header="Room Number" Width="100" DisplayMemberBinding="{Binding Path=Room.RoomNumber}"/>
+                                <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Path=Status.Description}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -99,7 +100,13 @@
                         <TextBox Name="txtPrice" Width="200" IsReadOnly="True"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                        <Button Name="btnCreateTransaction" Content="Create Transaction" Width="110" Click="btnCreateTransaction_Click" ></Button>
+                        <Label Content="Status" Width="100"/>
+                        <TextBox Name="txtStatus" Width="200" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                        <Button Name="btnCreateTransaction" Content="Create Transaction" Width="110" Click="btnCreateTransaction_Click" Visibility="Collapsed" ></Button>
+                        <Button Name="btnCancel" Content="Cancel Booking" Width="110" Click="btnCancel_Click" Visibility="Collapsed" ></Button>
                         <Button Name="btnBack" Content="Cancel" Width="100"  Margin="30,0,0,0" Click="btnHome_Click"/>
                     </StackPanel>
                     

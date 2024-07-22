@@ -19,11 +19,15 @@ public partial class Booking
 
     public DateOnly BookingDate { get; set; }
 
+    public int? StatusId { get; set; }
+
     public virtual Customer Customer { get; set; } = null!;
 
     public virtual Room Room { get; set; } = null!;
 
     public virtual Staff? Staff { get; set; }
+
+    public virtual BookingStatus? Status { get; set; }
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }
